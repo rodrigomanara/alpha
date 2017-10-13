@@ -28,7 +28,7 @@ class alpha {
      * @param type $str
      * @return int
      */
-    private function checkVolwels($alpha, $array) {
+    public function checkVowels($alpha, $array) {
 
         if (in_array($alpha, $array) && ctype_alpha($alpha)) {
             return 1;
@@ -43,7 +43,7 @@ class alpha {
      * @param type $str
      * @return int
      */
-    private function checkConsonates($alpha, $array) {
+    public function checkConsonates($alpha, $array) {
 
         if (!in_array($alpha, $array) && ctype_alpha($alpha)) {
             return 1;
@@ -75,7 +75,7 @@ class alpha {
      * @param type $string
      * @return type
      */
-    public function calculateWordLetterAvarage($string) {
+    public function calculateWordLetterAverage($string) {
 
         $str = explode(" ", $string);
 
