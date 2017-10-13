@@ -90,9 +90,3 @@ class alpha {
     }
 
 }
-
-$string = "rodrigo manara, test , 10";
-$alpha = new alpha();
-
-
-printf("\n returned: %s \r\n return: %s \r\n count numbers: %s \r\n", $alpha->countletter($string), $alpha->calculateWordLetterAvarage($string), $alpha->checkNumber($string));
