@@ -1,0 +1,19 @@
+
+{
+    "name": "rmanara/alpha",
+    "authors": [
+        {
+            "name": "Rodrigo Manara",
+            "email": "me@rodrigomanara.co.uk"
+        }
+    ],
+    "type": "project",
+    "license": "MIT", 
+    "version": "1.1.2",  
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Alpha\\": "/"
+        }
+    }
+}
