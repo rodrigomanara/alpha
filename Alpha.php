@@ -2,6 +2,9 @@
 
 class alpha {
 
+    
+    var $alpha = ["a", "e", "i", "o", "u"];
+    
     /**
      * 
      * @param type $str
@@ -9,13 +12,13 @@ class alpha {
     function countletter($str) {
 
         $text = str_split($str);
-        $array = ["a", "e", "i", "o", "u"];
+        $array = $this->alpha;
 
         $vowels = 0;
         $consonates = 0;
         foreach ($text as $alpha) {
-            $vowels += $this->checkConsonates($alpha, $array, $str);
-            $consonates += $this->checkVolwels($alpha, $array, $str);
+            $vowels += $this->checkConsonates($alpha);
+            $consonates += $this->checkVolwels($alpha);
         }
 
         return ("volwes :  $vowels ; consonantes: $consonates;");
@@ -28,9 +31,9 @@ class alpha {
      * @param type $str
      * @return int
      */
-    public function checkVowels($alpha, $array) {
+    public function checkVowels($alpha) {
 
-        if (in_array($alpha, $array) && ctype_alpha($alpha)) {
+        if (in_array($alpha, $this->alpha) && ctype_alpha($alpha)) {
             return 1;
         }
         return 0;
@@ -43,9 +46,9 @@ class alpha {
      * @param type $str
      * @return int
      */
-    public function checkConsonates($alpha, $array) {
+    public function checkConsonates($alpha) {
 
-        if (!in_array($alpha, $array) && ctype_alpha($alpha)) {
+        if (!in_array($alpha, $this->alpha) && ctype_alpha($alpha)) {
             return 1;
         }
         return 0;
