@@ -115,7 +115,7 @@ class Alpha {
         
         $count = 0;
         foreach (str_split($string) as $alpha) {
-            if (!preg_match("/[a-zA-Z0-9]/i", $alpha) && ctype_alpha($alpha)) {
+            if (!preg_match("/[a-zA-Z0-9]/i", $alpha)) {
                 $count++;
                 $this->set('noalpha', $alpha);
             }
