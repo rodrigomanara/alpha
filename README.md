@@ -1,2 +1,2 @@
 # alpha
-class to count and manipulate apha
+class to count and manipulate alpha
