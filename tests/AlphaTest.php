@@ -115,7 +115,7 @@ class AlphaTest extends TestCase
     public function testNoalphaWithAlphanumeric(): void
     {
         $result = $this->alpha->noalpha('hello, world!');
-        $this->assertEquals(2, $result);
+        $this->assertEquals(3, $result);
     }
     /**
      * Test noalpha with only alphanumeric
@@ -212,7 +212,7 @@ class AlphaTest extends TestCase
     {
         $this->alpha->set('test_key', 'value');
         $result = $this->alpha->get('test_key');
-        $this->assertEquals('value', $result);
+        $this->assertEquals(['value'], $result);
     }
     /**
      * Test set accumulates multiple values
@@ -259,7 +259,7 @@ class AlphaTest extends TestCase
         $this->assertEquals(3, $numberCount);
         $this->assertEquals(1, $specialCount); // !
         $this->assertEquals(1, $upperCount); // H
-        $this->assertEquals(2, $lowerCount); // e, o
+        $this->assertEquals(4, $lowerCount); // e, l, l, o
     }
     /**
      * Test empty string handling

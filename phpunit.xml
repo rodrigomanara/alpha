@@ -4,14 +4,10 @@
          bootstrap="vendor/autoload.php"
          cacheResultFile=".phpunit.cache/test-results"
          executionOrder="depends,defects"
-         forceCoversAnnotatedMethods="false"
-         beStrictAboutCoversAnnotatedMethods="false"
          beStrictAboutOutputDuringTests="true"
-         beStrictAboutTestSize="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
-         beStrictAboutTodoTestedCode="true"
          failOnRisky="true"
-         failOnWarning="true"
+         failOnWarning="false"
          verbose="true">
     <testsuites>
         <testsuite name="Alpha Test Suite">

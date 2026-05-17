@@ -8,6 +8,11 @@ class Alpha
     var $alpha = ["a", "e", "i", "o", "u"];
     var $set;
 
+    public function __construct()
+    {
+        $this->set = [];
+    }
+
     /**
      * Count vowels and consonants in a string
      *
@@ -18,16 +23,14 @@ class Alpha
     {
 
         $text = str_split($str);
-        $array = $this->alpha;
-
         $vowels = 0;
-        $checkConsonants = 0;
+        $consonants = 0;
         foreach ($text as $alpha) {
-            $vowels += $this->checkConsonants($alpha);
-            $checkConsonants += $this->checkVowels($alpha);
+            $vowels += $this->checkVowels($alpha);
+            $consonants += $this->checkConsonants($alpha);
         }
 
-        return ("vowels :  $vowels ; consonants: $checkConsonants;");
+        return ("vowels :  $vowels ; consonants: $consonants;");
     }
 
     /**
@@ -67,6 +70,17 @@ class Alpha
         }
         return $count;
 
+    }
+
+    /**
+     * Backward-compatible alias for the historical misspelled method name.
+     *
+     * @param string $string The input string to analyze
+     * @return int The number of consonants found
+     */
+    public function checkConsonates($string): int
+    {
+        return $this->checkConsonants($string);
     }
 
     /**
@@ -110,7 +124,11 @@ class Alpha
             $counter++;
         }
 
-        return ($avarage / $counter) > 0 ? ceil(abs($avarage / $counter)) : 0;
+        if ($counter === 0) {
+            return 0;
+        }
+
+        return (int) (($avarage / $counter) > 0 ? ceil(abs($avarage / $counter)) : 0);
     }
 
     /**
@@ -179,15 +197,11 @@ class Alpha
      */
     public function set($key, $value)
     {
-
-        if (isset($this->set[$key])) {
-
-            if (count($this->set[$key]) == 1)
-                unset($this->set[$key]);
-            $this->set[$key][] = $value;
-        } else {
-            $this->set[$key] = $value;
+        if (!isset($this->set[$key])) {
+            $this->set[$key] = [];
         }
+
+        $this->set[$key][] = $value;
     }
 
     /**
@@ -211,7 +225,7 @@ class Alpha
      */
     public function getAll() : array
     {
-        return $this->set;
+        return $this->set ?? [];
     }
 
 }
