@@ -12,8 +12,21 @@
   ],
   "autoload": {
     "psr-4": {
-      "Alpha\\": "src/"
+      "Manara\\Alpha\\": "src/"
     }
   },
-  "require": {}
+  "autoload-dev": {
+    "psr-4": {
+      "Manara\\Alpha\\Tests\\": "tests/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "test:coverage": "phpunit --coverage-html coverage",
+    "test:xml": "phpunit --coverage-xml coverage/coverage.xml"
+  }
 }

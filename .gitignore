@@ -1,0 +1,24 @@
+# PHPUnit
+.phpunit.cache/
+coverage/
+phpunit.xml.dist
+
+# Composer
+vendor/
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project
+.env
+*.log
+
